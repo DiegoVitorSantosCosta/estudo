@@ -1,0 +1,162 @@
+criamos uma pasta dentro de app, course, depois um arquivo corse.component.ts, o certo é colocar os nomes conforme o uso do arquivo.
+
+no arquivo corse.component.ts  importamos o component e criamos e exportamos uma classe ex: 
+
+import { Component } from "@angular/core";
+
+@Component({
+
+    selector: 'app-course-list',
+    templateUrl: './index.component.html'
+})
+export class CourseListComponent {}
+
+a partir do seletor que todo o component sera renderizado.
+o templateUrl serve para passar o diretorio do html.
+
+após criamos um componente,vamos no arquivo app.component.html e colocamos a tag com o nome do seletor 
+<app-course-list></app-course-list>
+
+depois, vamos no arquivo app.moule.ts e importamos a classe do component,e declaramos
+
+import { CourseListComponent } from './course/courseList.component'
+
+declarations: [
+    AppComponent,
+    CourseListComponent]
+    
+    todas as vezes que criarmos um componente tempos que importalo e declara-lo ao modulo correspondente a ele.
+
+
+para criarmos classes auxiliares criamos um arquivo Ex: 
+course.ts , dentro dele fazemos uma classe.
+
+export class Course {
+    id : number;
+    name : string;
+    imageUrl : string;
+    price : number;
+    code : string;
+    duration : number;
+    rating: number;
+    releaseDate: string;
+    
+}
+
+Para manipular os dados da classe , vamos no componente criado , importamos essa classe.
+Criamos uma variavel para receber a classe em array
+
+// criamos uma propriedade Course e que é um array do tipo course
+    courses : Course[] = [];
+    
+    passamos os valores para a classe assim:
+    
+    // essa função ngOnInit() é nativa do angular, é executada assim quando é inciado o componente, para ultiliza-la no final do nome da classe em uso colocamos o implements OnInit  ex: 
+    
+    export class CourseListComponent implements OnInit
+    
+     ngOnInit(): void {
+        this.courses = [
+            {
+                id:1,
+                name: 'angular',
+                imageUrl: '',
+                price: 99.99,
+                code: 'xps.3',
+                duration: 120,
+                rating: 5.4,
+                releaseDate: '24/4/2021'
+            },
+            {
+                id:2,
+                name: 'react',
+                imageUrl: '',
+                price: 8.99,
+                code: 'fdfd.5',
+                duration: 190,
+                rating: 6.4,
+                releaseDate: '24/4/2021'
+            }
+        ]
+    }
+
+	para exibir os dados da classe no html, usamos o atributo ngFor="" em uma tag
+	
+ // criamos uma variavel, depois usamos o of obrigatorio, e o nome da propriedade criada  estanciada da classe, essa aqui =>  courses : Course[] = [];
+ para renderizar esses components temos que ter usado o  ngOnInit(){
+
+ 
+ <tr*ngFor = " let att of courses">
+ 
+ 	<img [src]="a.imageUrl" alt="">
+ 	<td>{{att.name}}</td>
+ 	<td>{{att.price}}</td>
+ 	<td>{{att.code}}</td>
+ 	<td>{{att.duration}}</td>
+ 	<td>{{att.rating}}</td>
+ 	<td>{{att.releaseDate}}</td>
+ 	
+ </tr>
+ 
+ Quando precisar-mos colocar alguma variavel ou objeto do angular para o atributo do html passamos o atributo html entre colchetes [src]=""
+ 
+ export class starsComponent implements OnChanges {}
+ 
+ onChanges é ativado quando temos alguma alteração, usamos para uma requisição https.
+ o metodo se é ngChange(){}
+ 
+ @Input() isso faz a variavel estar elegivel,para receber um valor de uma variável de um component externo.
+ 
+ @Input()
+    rating: number = 0;
+    starWidth: number;
+
+    ngOnChanges() {
+        this.starWidth = this.rating * 74 / 5
+        
+
+    }
+    No final o input vira atributo vamos chamar a propriedade rating, pelo att.rating
+    Temos que passar o selector desse component para o html que iremoss usar.
+ <app-stars [rating]='att.rating'></app-stars>
+ 
+ lembrando que temos que passar o componente novo para o app.module.ts
+ 
+ 
+ 
+ @Injectable({ //isso torna nossa classe elegivel para injeção de idepedencia
+    providedIn: 'root'  //faz ser carregado na root da aplicação.
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quanto tempo tem para terminar o projeto.
+
+perguntar se aquele cards que ela escreveu foram parar no trella
+
+Saber e anotar as informações do que para para fazer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

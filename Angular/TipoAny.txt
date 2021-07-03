@@ -1,0 +1,1 @@
+Todos tipos (any) é só quando realmente aceita todos tipos, que não faz diferença o que vem.

@@ -1,0 +1,33 @@
+Propety binding É quando desejamos linkar o valor da propriedade de um elemento a um método de um componente. usamos os atributos com a tag [] para o html etender que vamos usar um atributo de um componente de uma classe.
+
+one-way binding
+// no componente , passamos um valor em um objeto
+user ={name: 'Diego'}
+
+// No template do componente passamos o colchetes para o atributo etender que o valor irá vir do componente.
+< input [value] = "user.name"
+
+Podemos alterar o valor do one-way so no componente. é sempre do componente para o html.
+
+Podemos fazer expressoes boleanas,ex:
+
+user ={name: 'Diego',
+ isGeday: true
+ }
+ 
+ // controla a visibilidade se uma condição for bollean
+ <div [hidden] = "!user.isgeday">
+ ola mundo!
+ </div>
+ 
+ Para deixar partes da propriedades opcionais ultilizamos o ?
+ neste caso se o usuario não for true,a div não vai aparecer, outro exemplo: 
+ <div [class.ligth] = "!user.isgeday">
+ ola mundo"
+ </div>
+ 
+ TWO WAY BIDING : Se alterarmos um valor no html ,logo, ele será alterado no html, tento se alterarmos o valor do componente ele será alteerado no html. Para isso usamos a seguinte sintax: 
+ <input [(ngModel)] = "atributoDoComponente">
+ 
+ 
+

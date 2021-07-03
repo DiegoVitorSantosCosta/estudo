@@ -1,0 +1,84 @@
+Módulos compartilhados com componentes diretivas se pipes eles importam modúlos compartilhados.
+
+Core module não importam nada na aplicação.
+
+Modúlos rais, ele referencia o modulo core e os outros também.
+
+
+
+
+Para declarar um modúlo temos que importar o decorator @ngModule , e exportar a classe do modulo ex:
+
+@NgModule({
+
+    // sessão de decorations lista todos os componentes. Importamos a classe refetente a pasta do componente.
+    declarations:[
+        AboutComponent
+    ],
+    // podemos exportar o modulo dentro desse export
+    exports:[AboutModule]
+})
+export class AboutModule{}
+
+
+//Para carregar o mudulo separados precisamos configurar o router raiz da aplicação !!
+
+// Dentro do routerRaiz, Não precisamos importar o componente da classe da pagina. passamos o primeiro parâmetro normal, o segundo não será o componente , será o loadChildren: 'pasta/modulo#ClasseExportadaDoModúlo' ex:
+
+    {path: 'about',loadChildren: './about/about.module#AboutModule'},
+
+Basicamente , quando clicar no path do about, vamos carregar a configuração que esta no modulo
+
+Dentro do modulo separado ,  precisamos configurar o path 
+
+
+
+// iportamos as rotas
+import { Routes, RouterModule } from '@angular/router';
+
+const  routes: Routes =[
+    {path: '',component:AboutComponent} // esse componente sera o padrão para este modulo
+]
+
+@NgModule({
+
+
+    declarations:[
+        AboutComponent
+    ],
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    exports:[AboutModule],
+    imports:[RouterModule,RouterModule.forChild(routes)] // não passamos o forRoot(), e sim o forChild()
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+numeros de produtos pode ser a quatidade do array de pedidos
+
+nao exibir ticket
+
+
+criar um componente de status geral , para atualizar se o pagamento já foi feito ou não
+

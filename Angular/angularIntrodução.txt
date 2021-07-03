@@ -1,0 +1,64 @@
+{ 
+
+angular.json
+
+expomos arq globais.
+
+	assests:
+	Representa a parte estatica da nossa aplicação,irão conter as imagens da aplicação e outros arq estáticos.
+	
+	styles:
+	onde definirmos os stylos globais para todos os componentes.
+	
+	index:
+	onde sera o inicio base da aplicação ,qual é a página que ele vai ler e apartir dela sera usada para receber todos os componentes.
+	
+	
+	}
+	
+	{
+	main.ts:
+	É responsavel por inicializar nossa aplicação,é uma ruck,ele espera receber o modúlo raiz da nossa aplicação. para que ele possa fazer o processo de inicialização.
+	
+	}
+	
+	
+	ng g c nomeDo componente:
+	isso gera um novo componente teste.
+	
+	app.module.js:
+	carregamos os componenstes pai
+	
+
+O angular por padrão ele já é modulado, mesmo se a gente não criar um modulo ele vem um modúlo por padrão.
+
+	Modúlo:
+	Ele é um limitador de contexto. Ex: casa seria um modúlo pai,quarto,sala,cozinha,copa seriam mudúlos separados.
+	
+	Componentes:
+	eles trazem vida a esse modulo.
+	
+	export class AppComponent {
+  	title = 'app';
+  	podemos aqui criar atributos para a classe.
+  	nome: = 'Diego vitor'
+				}
+	
+	selector: vai criar uma tag para usarmos onde quisermos,serve para renderizar todos componentes.
+	
+	templateurl: passamos o diretorio do html.
+	
+	styleurl: passamos o css aqui.
+	
+	title: atributo do coponente.
+	
+	
+	ngModel: 
+	serve para atribuir uma relação de um input e uma variavel do componente
+	<input [ngModel] = 'name'  name ='email'  > entre colchete é a forma oneaway, que so vai exibir e não irá atualizar a propriedade.
+	
+	o name acima, criamos no app.componente.ts , dentro do export class {
+	name = 'diego'}
+	
+	
+	

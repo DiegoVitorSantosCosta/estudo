@@ -1,0 +1,9 @@
+Interface: fazemos essa interface quando formos mandar para o backend. Temos que fazer um modelo.
+
+para mandar alguma coisa para o back end usamos o post.
+neste caso o atributo product ele esta fazendo uma referencia da interface Product.
+//Product é uma interface.
+create(product: Product):Observable<Product>{ //Passando o observable aqui ele consegue detectar a resposta
+  return this.http.post<Product>(this.endpoint,product)
+
+}

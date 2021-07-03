@@ -1,0 +1,22 @@
+Pipes:São processamento em cimas de variavéis.
+ou double mustache .
+<p> O vencimento é
+{{produto.vencimento | date }} // o barra date é para formatar algum dado que vem do banco
+{{ produto.horas | time }}
+</p>
+
+Alguns pipes recebem parâmetros,
+
+Usamos esse pipe para formatar
+
+<td>
+{{ product.price | currency: 'BRL' }}
+{{ product.price | currency: 'US' }}
+podemos trocar virgulas por pontos e variaas formatações.
+</td>
+
+<p>
+O vencimeno é 
+{{ produto.vecimento | date: 'fullDate' | uppercase }}
+
+</p>

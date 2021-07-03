@@ -1,0 +1,53 @@
+Formaularios reativos (data driven) : construimos os formularios no nosso componente.
+
+	// importamos no app module os modulos: { FormsModule,FormBuilder, ReactiveFormsModule } from '@angular/forms';
+
+//no componete do formulario que estamos trabalhando, usamos as importações  import { FormGroup,FormBuilder} from "@angular/forms"
+
+1- criamos um atributo do tipo FormGroup .
+formulario: FormGroup
+
+
+
+
+2- criamos um atributo do tipo formBuider: FormBuider no constructor().	 // importamos o formbuider
+private formBuider: FormBuider
+
+3-Dentro do ngOnInit(), :
+this.formulario = this.formBuider.grup({
+
+	// inicia com os valores nulos poderia passar algum valor para iniciar ,ex nome: ['diego']
+	nome: [null],
+	// o segundo parâmetro é para fazer validações no campo do imput: ex nome:[null,validator.requered].
+	// quando queremos passar mais de uma validações usamos um array para isso: ex:
+	email: [null,[validators.required,validators.email]]
+	
+	// PARA USAR O VALIDATORS PRECISAMOS IMPORTALO DO @angular/form
+})
+
+para vicular o formulario html com o formulario criado no componente , usamos uma diretiva do reactFormModule chamada [formGroup],usando o propety binding, na tag <form > do html  <form [formGroup] = 'formulario'>
+
+e nos imputs colocamos formControlName ao invés de name=""
+
+formControlName = "nomeDoAtributoUltilizadoNoFormulario"
+
+A tag <ng-select> Só usamos ela quando queremos passar um select no formulario, ao contrario disso usamos input normal. importamos o modulo dela no app.module  imports[ NgSelectModule ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Para fazer o evento de submit usamos a diretiva no html (ngSubmit)="myFunction()".
+                                                                                                                                              

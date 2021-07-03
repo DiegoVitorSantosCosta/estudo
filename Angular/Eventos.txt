@@ -1,0 +1,24 @@
+Eventos de um componente:
+importamos duas bibliotecas,Output,EventEmitter.
+Output ele emite eventos, Ex:
+
+@Output() myEvent = new EventEmitter()
+
+
+Chamamos a função de evento assim:
+click(): void{
+this.myEvent.emit()
+}
+
+Para colocar-mos uma referencia para ultilizarmos no nosso dom , usamos o # ex: <textarea #description>
+</textarea>
+
+podemos passar um evento click direto no dom: ex 
+<buttom (click)="description.focus()">
+</buttom>
+quando clicarmos no botão disparamos o evento.
+
+NO HTML: passamos a syntax em um elemento :<buttom (click)="createProduct()"></buttom>.
+no componente criamos uma função com o mesmo nome , e passamos o que deverá ocorrer.
+
+createProduct(): void{}

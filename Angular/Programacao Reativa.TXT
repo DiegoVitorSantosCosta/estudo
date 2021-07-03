@@ -1,0 +1,5 @@
+RXJS: Programação reativa  , são codicos so sera chamado quando precisa acontecer algum evento externo.
+
+Ao contrario ele não vai agir de forma proativa , que tera mais processamento , que seria A cada milesimo o  codico ficar procurando coisas para fazer. Isso será desnecessario e ira ocupar muito processamento.
+
+import { observable } from 'rxjs';

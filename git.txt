@@ -1,0 +1,17 @@
+-b já muda para a nova branch, que nesse exemplo se chama desenv.
+$ git checkout -b desenv master
+
+git pull origin nomeBranch
+esse comando puxa todas as att de uma branch e add no seu projeto
+
+
+para excluir uma branch remotamente
+git branch -D  nomeDaBranch 
+
+
+para excluir uma branch localmente
+git push origin :nome_do_branch
+
+
+
+

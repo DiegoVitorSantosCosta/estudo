@@ -1,0 +1,5 @@
+Programação reative: é quando um evento acontece e oque estão interessados serão notificados e reagem a ele. é baseada na ideia observer.
+
+rxjs : o objeto principal se chama observable. Ele possui series de eventos para incrição e manipulação de eventos.
+
+o metodo .subriscribe( x => console.log(x) ) é parecido com o forEatch(), pois cada item do array será implementado no metodo subriscribe.

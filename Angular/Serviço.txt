@@ -1,0 +1,57 @@
+	Serviços : São classes normais que que podemos organizar e compartilhar métodos e dados e injetar em componentes e outros serviços. São usados para encapsular os dados da api do backEnd. 
+Sempre que criar um serviço devemos declara-lo dentro do  providers do angular no modulo principal.
+
+O uso de service é para colocar tuda a logica de componentes que não tem aver com mostrar na tela, ou seja, um endpoint, dados vindo do backend.
+
+Eles podem ser singletons,que quer dizer que eles podem guardar dados compartilhados para toda a aplicaçao, ou uma parte dela.
+
+Para declarar o Serviço são três escopos:
+
+Modulo angular ..... providers: [] Raiz
+Aqui fica disponivel para injetar em todas as classes declarada nesse mesmo modulo.
+
+
+Componente e seus filhos ... providers[]
+Sera compartilhado apenas para o componente e componentes filho.
+
+
+Somente componente ... viewProviders[]
+fica disponivel para o componente pai.
+
+INJEÇÃO DE DEPEDÊNCIAS: é um padão no qual a classe A precisa da Classe B e recebe as depedências de um fonte externa ao invés de criar por conta propria. 
+A classe B seria o service.
+
+
+serviços podem aceitar injeções de outros serviços.
+Para isso ultilizamos o decorator @Injectable() -> quer dizer que ela vai ser detectada no angular, e sera capaz de fazer injeções em outros componentes.
+
+	Para criar um service usamos o comando ng g s  (opicional) pasta/nome ou so o nome.
+	Para usar o serve na classe é a seguinte sintax. 
+	EX:
+		
+	@injectable({
+	providedIn: "root", // Vai ser o app.module vai ter apenas uma estancia.
+	})
+	export class ProductService{}
+
+
+
+provideIn: além do root, podemos fazer um import {} de um modulo especifico de um componente, ex login, 
+import { LoginModule } from './loginMoudle'
+
+
+@injectable({
+	providedIn: LoginModule,
+	})
+	export class ProductService{}
+	
+	Dessa forma, injetamos apenas Na classe de LoginModule.
+	
+	
+	@NgModule: injeta modulos,
+	@Injectable: injeta classes ou serviços,
+	@Directive: 
+	@Component: 
+
+
+

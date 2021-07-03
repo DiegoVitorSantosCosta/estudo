@@ -1,0 +1,11 @@
+O padrão Observable : é um padrão orientado a evento.
+
+o evento subject: tem a capacidade de monitorar e detectar quando um evento acontece.
+
+o evento Observer: depois que o subject detectou o evento que aconteceu, e o subject tem dentro de si todos os observable que estão interassados, ele vai notificar todos os observable que o evento que eles estavam interassados aconteceu. E quando ele notifica os observable , é executado as funções em cada observable notificado.
+	 Ex: 
+	 Em um evento de compras , temos um observable que é para enviar email ao usuario, outro para dar baixa no estoque, para mandar notificação para o sistema de separação dos produdos Etc.
+	 
+	 
+
+

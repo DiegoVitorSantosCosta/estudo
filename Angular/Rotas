@@ -1,0 +1,37 @@
+Para deixar uma area dinamica para toda vez que formos trocar os componentes, usamos o <router-outlet></router-outlet> nessa região que os componentes serão colocados. isso irá fazer trocas de componentes ou paginas.
+
+Para isso precisamos mapear cada componente em rotas.
+As rotas são arrays que contem mapeameto de cada caminho para os componentes. EX:
+
+export const ROUTES: Route =[
+{path: '',component: RestaurantesComponent}, // quando não passamos o caminho, é o comteudo principal.
+{path: 'restaurant/:id',component: RestauranteComponent},
+{path: 'about',component: AboutComponent}   // não precisamos passa caminho de diretorio aqui.
+]
+// quando não expecificamos os caminhos o angular vai mostrar o caminho principal ex:
+    {path: '',component:HomeComponent},
+
+rotas aceitam paramêtros de dois pontos :
+
+para chamar os componentes no html, usamos uma diretiva chamada routerLink onde podemos passar um caminho o conjuntos de paramêtros. Ex:
+<a routerLink = '/restaurants'> Restaurantes </a>
+
+<!-- ou -->
+
+ podemos passar proped binding para passar rotas ex:
+    <li><a [routerLink] = "['/about']">Sobre</a></li>
+    
+    passamos as rotas em array ['']
+<a [routerLink]="['/restaurants']">Restaurantes </a>
+
+
+ todas as vezes que criamos routerLink, precisamos passar a rota no componente de ROTAS e importar o componente da pagina criada.
+    
+    precisamos importar as rotas no modulo principal.Depois passa-los no imports: [] RoutesModule.forRoot(ROUTES) o ROUTES E O COMPONENTE DE ROTAS  IMPORTADO.
+    
+   
+    
+    <li routerLinkActive="NomeDaClasse"> <a [routerLink] = ['/'] ></a> </li>
+    isso serve para quando quiser-mos passar uma classe ao determinado item que esta renderizado na tela,
+    quando tivesse nessa rota a classe estaria ativada.
+    

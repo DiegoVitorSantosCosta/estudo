@@ -1,0 +1,34 @@
+O que é diretivas:
+ 	são componentes com templetes. Ela serve para adicionar comportamento no dom.
+ 		sao três tipos:
+Componentes: as mais comuns  para transformar uma classe em component usamos diretiva @component
+
+estruturais : mudam o template as estruturas do dom como ngFor e ngIf.
+
+ngIf permite renderizar um conteudo caso a expressão seja verdadeira . Ex:
+
+
+abreviada <div *ngIf = "user.isJedi"></div>
+
+<li>*ngFor="let user of users"{{user.name}}</li>
+
+isso repete o conteudo de um elemento para cada item de uma coleção de objetos.o ultimo parâmetro podemos passar um metodo ou uma propriedade.
+Podemos usar o index : 
+
+<li>*ngFor="let user of users; let i = index"{{i + 1}}  {{user.name}}</li>
+
+<div [ngSwitch] = "profile">
+<p *ngSwitchCase = "root"> its root</p>
+
+<p *ngSwitchCase = "user"> its user </p>
+<p *ngSwitchDefault>  pd </p>
+
+
+
+atributos : associa um atributo no elemento dom.
+
+
+? o operador ? indica que se o resultado for undefined ele não precisa ser lido ex: <div *ngFor=students?.isJedi"
+Students: {{student?.name}}
+</div>
+
